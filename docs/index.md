@@ -1,8 +1,8 @@
 ---
 layout: post
-title: YourHomeTitle
+title: DDCA
 nav_order: 0
-description: "YourHomeDescription"
+description: "DDCA"
 permalink: /
 ---
 
