@@ -1,13 +1,4 @@
----
-layout: page
-title: Chapter 4
-permalink: /ch4
-nav_order: 4
-
-
----
-
-# Chapter 4: Hardware Description Languages
+# hapter 4: Hardware Description Languages
 
 硬件描述语言（HDL）在数字设计与计算机架构中扮演着重要角色，特别是在描述和模拟数字电路的行为方面。本章将深入探讨硬件描述语言的基础知识，并介绍其主要应用领域。硬件描述语言是设计复杂数字系统（如处理器、存储设备等）不可或缺的工具。通过这些语言，设计者能够使用高层次的代码来定义硬件电路的功能，并通过仿真工具验证设计的正确性，确保它们能够在实际硬件中高效运行。
 
