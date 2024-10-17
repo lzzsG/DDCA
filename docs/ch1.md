@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Chapter 1 From Zero to One 
-permalink: /ch1/
+permalink: /ch1
 nav_order: 1
 ---
 

@@ -1,12 +1,14 @@
 ---
 layout: page
 title: Chapter 3 Sequential Logic Design
-permalink: /ch3/
+permalink: /ch3
 nav_order: 3
 
 ---
 
 # Chapter 3: Sequential Logic Design
+
+《Digital Design and Computer Architecture: RISC-V Edition》
 
 在数字设计与计算机体系结构中，**时序逻辑设计**（Sequential Logic Design）是一个关键概念，它与组合逻辑不同，后者的输出只依赖于当前的输入。而顺序逻辑的输出不仅取决于当前输入，还取决于之前的输入，这一特性使其能够具有**记忆**功能。通过这种记忆功能，顺序逻辑能够保存状态，并根据外部信号的变化进行决策。这是大多数现代计算机系统和电子设备的核心工作原理。
 

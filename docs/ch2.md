@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Chapter 2 Combinational Logic Design
-permalink: /ch2/
+permalink: /ch2
 nav_order: 2
 
 ---
