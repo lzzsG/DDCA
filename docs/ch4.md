@@ -3,7 +3,7 @@ layout: page
 title: Chapter 4 Hardware Description Languages
 permalink: /ch4
 nav_order: 4
-
+has_children: true
 
 
 
@@ -1550,7 +1550,7 @@ These notes may be used and modified for educational and/or  non-commercial purp
 
 ---
 
-在我们讨论的 **SystemVerilog** 示例中，有一些特性确实超出了传统 **Verilog** 的涵盖范围。SystemVerilog 是 Verilog 的扩展版，增加了许多高级特性来支持更加复杂的设计和验证需求。以下是这些示例中超出 Verilog 语言的特性：
+在我们讨论的 **SystemVerilog** 示例中，有一些特性超出了传统 **Verilog** 的涵盖范围。SystemVerilog 是 Verilog 的扩展版，增加了许多高级特性来支持更加复杂的设计和验证需求。以下是这些示例中超出 Verilog 语言的特性：
 
 ### 1. **`logic` 数据类型**
    - **SystemVerilog**：引入了新的数据类型 `logic`，用来替代 Verilog 中的 `wire` 和 `reg`，简化了信号类型的管理。在 Verilog 中，`wire` 和 `reg` 是分开的，`wire` 用于连接，而 `reg` 用于存储。在 **SystemVerilog** 中，`logic` 既可以用于连接，也可以用于存储，更加灵活。
