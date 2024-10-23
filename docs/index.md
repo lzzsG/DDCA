@@ -9,7 +9,21 @@ permalink: /
 
 # 开始
 
-Videos
+Digital Design and Computer Architecture: RISC-V Edition chapter 1-5
+
+数字设计和计算机架构：RISC-V 版第 1-5 章
+
+Chapter 1 From Zero to One
+Chapter 2 Combinational Logic Design
+Chapter 3 Sequential Logic Design
+Chapter 4 Hardware Description Languages
+Chapter 5 Digital Building Blocks
+
+第1章 从零到一
+第2章 组合逻辑设计
+第3章 顺序逻辑设计
+第4章 硬件描述语言
+第5章 数字构建模块
 
 ### Chapter 1
 
@@ -175,8 +189,6 @@ Videos
 - 8: [Interfaces](https://youtu.be/ONaDDtJAyP4)
 - 9: [SPI](https://youtu.be/JWnEqTE5NcY)
 - 10: [SPI Accelerometer Example](https://youtu.be/tiLSwNshVwM)
-
-
 
 ### 目录
 
