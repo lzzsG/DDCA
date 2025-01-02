@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Chapter 2 Combinational Logic Design
-permalink: /ch2
+permalink: /ch2-combinational-logic-design/
 nav_order: 2
-
+description: Chapter 2 Combinational Logic Design 本章深入解析组合逻辑设计的核心知识。结合布尔代数、逻辑门、卡诺图等概念，全面探讨组合逻辑电路的组成与功能特性。章节还涵盖时间和功能规范，使读者能够理解无存储单元电路的设计及其广泛应用。Digital Design and Computer Architecture
 ---
 
 # Chapter 2: Combinational Logic Design
@@ -44,8 +44,6 @@ nav_order: 2
 
 在这个组合逻辑电路的概念框架中，输入信号通过功能和时序规范的约束，最终生成对应的输出。简单的框图如上所示，其中输入经过功能和时序的定义，最终产生输出。
 
-
-
 ## Circuits
 
 电路是由多个逻辑元件组成的系统，每个元件根据输入信号执行特定的逻辑操作并生成输出信号。理解电路的结构和组成是学习组合逻辑设计的重要基础。
@@ -55,6 +53,7 @@ nav_order: 2
 ### 节点（Nodes）
 
 电路中的节点指的是电路内部的连接点，它们包括输入节点、输出节点和内部节点：
+
 - **输入节点**：输入信号来自外部系统，用来驱动电路中的逻辑元件。在图示中，输入节点为 A、B、C。
 - **输出节点**：输出信号是电路根据输入信号处理后的结果。在图示中，输出为 Y 和 Z。
 - **内部节点（n1）**：这是电路内部的连接点，可能连接多个逻辑元件，在逻辑处理的中间阶段起作用。
@@ -88,8 +87,6 @@ nav_order: 2
 <img src="{{ site.baseurl }}/docs/assets/image-20241016131811126.png" alt="image-20241016131811126" style="zoom:60%;" />
 
 图示中的示例显示了由逻辑门组成的一个简单组合逻辑电路。这个电路没有任何循环路径，符合组合逻辑电路的构成规则。输入信号经过与非门和或门的处理，生成唯一的输出。
-
-
 
 # Boolean Equations
 
@@ -134,7 +131,6 @@ nav_order: 2
 - 最小项是文字的乘积（AND），并且对于那一行（对应特定的输入组合）为真。
 - 如果输出为 1，可以通过对这些最小项进行 OR 运算（加法）来生成整个函数。
   
-
 例如，对于输入 A 和 B，输出 Y 可以如下表所示：
 
 | A    | B    | Y    | Minterm                         | Minterm Name |
@@ -149,8 +145,6 @@ nav_order: 2
 \\[ Y = m_1 + m_2 + m_3 = \overline{A}B + A\overline{B} + AB \\]
 
 这种 SOP 形式简洁且便于计算机和电路设计中实现组合逻辑电路。
-
-
 
 ## Product-of-Sums (POS) Form
 
@@ -198,8 +192,6 @@ nav_order: 2
 
 根据这个表格，C 和 M 的组合可以通过布尔方程表示，来判断你是否会选择吃午饭。
 
-
-
 ## SOP & POS Form
 
 ### SOP – Sum-of-Products 形式
@@ -238,21 +230,21 @@ nav_order: 2
 
 ## Forming Boolean Expressions 形成布尔表达式
 
-### Example 1:
+### Example 1
 
 **问题描述**：如果不下雨（\\(\overline{R}\\)）并且有三明治（S），我们就去公园（P 为输出）。  
 **布尔表达式**：
 \\[ P = \overline{R} S \\]
 这里，\\(\overline{R}\\) 表示“没有下雨”，S 表示“有三明治”。
 
-### Example 2:
+### Example 2
 
 **问题描述**：如果我们给你寄了一百万美元（M）或一个小笔记本（N），你将被视为赢家（W 为输出）。  
 **布尔表达式**：
 \\[ W = M + N \\]
 这个表达式表示，只要满足任意一个条件，你就会被视为赢家。
 
-### Example 3:
+### Example 3
 
 **问题描述**：如果你自己做饭（M）或者你有一个非常有才华但不昂贵的私人厨师（C, T, \\(\overline{X}\\)），你可以吃到美味的食物（E 为输出）。  
 **布尔表达式**：
@@ -261,17 +253,13 @@ nav_order: 2
 
 通过这些例子，我们可以看到如何将日常逻辑问题转换为布尔表达式，以便在逻辑电路中使用。
 
-
-
-
-
 # Boolean Axioms
 
 ## 布尔公理
 
 布尔代数中的公理提供了简化和操作布尔表达式的基本规则。这些公理与二进制运算密切相关，能够帮助我们理解逻辑表达式的本质并进行简化。
 
-### 常见的布尔代数公理：
+### 常见的布尔代数公理
 
 - **A1**: \\( B = 0 \\) 当 \\( B \neq 1 \\)（二进制场 Binary Field）  
   这是二进制系统的基础，变量 B 的值只能是 0 或 1。
@@ -306,7 +294,7 @@ nav_order: 2
 
 布尔代数中的单变量定理为简化逻辑表达式提供了基本工具。通过这些定理，我们可以将复杂的布尔表达式简化为更易于实现和理解的形式。每个定理都展示了布尔代数的独特特性，以及如何通过逻辑运算简化变量之间的关系。
 
-### 常见定理：
+### 常见定理
 
 - **T1**: \\( B \cdot 1 = B \\)（恒等定理 Identity）  
   一个布尔变量与 1 进行 AND 运算的结果是变量本身。
@@ -365,7 +353,8 @@ nav_order: 2
 
 我们回顾了基本的布尔代数定理，这些定理为简化逻辑表达式提供了重要的基础。每个定理都有对应的对偶形式，展示了布尔代数中的双重性原则。
 
-### 基本布尔定理：
+### 基本布尔定理
+
 - **T1: Identity Theorem** \\( B \cdot 1 = B \\)  
   对偶：\\( B + 0 = B \\)
 - **T2: Null Element Theorem** \\( B \cdot 0 = 0 \\)  
@@ -382,7 +371,8 @@ nav_order: 2
 
 在布尔代数中，除了单变量定理之外，多变量定理提供了更多的工具用于复杂逻辑表达式的简化。以下是几条重要的多变量定理。
 
-### 多变量布尔定理及其对偶：
+### 多变量布尔定理及其对偶
+
 - **T6: Commutativity (交换律)**  
   \\( B \cdot C = C \cdot B \\)  
   对偶：\\( B + C = C + B \\)
@@ -422,16 +412,12 @@ nav_order: 2
 
 这两种方法在实际中都被广泛使用，特别是在验证复杂的逻辑电路时。
 
-
-
-
-
 ## T10: Combining Theorem
 
 **定理 T10: \\( (B \cdot C) + (B \cdot \overline{C}) = B \\)**  
 该定理称为“合并定理”（Combining Theorem），说明了一个变量与其两个互补部分的 AND 运算结果可以通过 OR 运算组合简化为该变量本身。
 
-### 证明方法：
+### 证明方法
 
 利用布尔代数的分配律和互补定理，可以证明该定理。具体步骤如下：
 
@@ -439,12 +425,11 @@ nav_order: 2
    \\[
    (B \cdot C) + (B \cdot \overline{C}) = B \cdot (C + \overline{C})
    \\]
-   
+
 2. 根据互补定理 \\( C + \overline{C} = 1 \\)，简化：
    \\[
    B \cdot 1 = B
    \\]
-   
 
 因此，证明了 \\( (B \cdot C) + (B \cdot \overline{C}) = B \\)。
 
@@ -461,7 +446,8 @@ De Morgan 定理描述了布尔表达式中取反运算的分配规则。该定�
 
 De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达式的简化和电路实现中。
 
-### 总结：
+### 总结
+
 - 乘积的补数是补数的和。
 - 和的补数是补数的乘积。
 
@@ -469,7 +455,8 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 让我们回顾多变量布尔定理及其对应的对偶形式。每个定理都展示了在处理多个变量时如何简化复杂的布尔表达式。
 
-### 多变量定理及其对偶：
+### 多变量定理及其对偶
+
 - **T6: 交换律 (Commutativity)**  
   \\( B \cdot C = C \cdot B \\)  
   对偶：\\( B + C = C + B \\)
@@ -500,15 +487,14 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 这些定理在逻辑电路设计中应用广泛，帮助工程师优化电路并减少逻辑门的数量。
 
-
-
 # Boolean Algebra: Simplifying Equations
 
 ## 布尔代数：简化方程
 
 简化布尔表达式是逻辑设计的核心任务之一，目的是减少表达式的复杂性，从而降低实现逻辑电路所需的逻辑门数量、功耗和成本。简化的结果通常采用 **乘积之和（SOP）形式**，这种形式包含最少的蕴含项（implicants），且每个蕴含项中的文字（literals）数量最少。
 
-### 关键术语：
+### 关键术语
+
 - **蕴含项（Implicant）**：由多个文字的乘积构成，如 \\( ABC \\)、\\( A\overline{C} \\)、\\( B\overline{C} \\)。
 - **文字（Literal）**：变量本身或其补数，如 \\( A \\)、\\( \overline{A} \\)、\\( B \\)、\\( C \\)、\\( \overline{C} \\)。
 
@@ -516,7 +502,8 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 ## Simplifying Boolean Equations
 
-### Example :
+### Example
+
 简化表达式：  
 \\[ Y = \overline{A}B + AB \\]
 
@@ -524,20 +511,22 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 \\[ Y = B \\]
 
 或者，使用分配律简化：
+
 1. \\( Y = B(A + \overline{A}) \\) （**T8: Distributivity** 分配律）
 2. \\( A + \overline{A} = 1 \\) （**T5’: Complements** 互补定理）
 3. \\( Y = B \cdot 1 = B \\) （**T1: Identity** 恒等定理）
 
-### Example :
+### Example
+
 简化表达式：  
 \\[ Y = A\overline{B}C + ABC  + \overline{A}BC \\]
 
 1. 应用幂等定理 \\(ABC +ABC = ABC \\)：
    \\[ Y =  A\overline{B}C + ABC + ABC + \overline{A}BC \\] （**T3’: Idempotency** 幂等定理）
-   
+
 2. 使用结合律将项进行分组：
    \\[ Y = (\overline{A}BC + ABC) + (ABC + A\overline{B}V) \\] （**T7’: Associativity** 结合律）
-   
+
 3. 使用合并定理简化各组：
    \\[ \overline{A}BC + ABC = BC \\]  
    \\[ ABC + A\overline{B}C = AC \\]
@@ -547,7 +536,8 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 ## lifying Boolean Equations
 
-### Example :
+### Example
+
 简化表达式：  
 \\[ Y = A(AB + ABC) \\]
 
@@ -555,14 +545,15 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 1. 使用幂等定理（T3'），我们知道 \\( AB + ABC = AB \\)：
    \\[ Y = A \cdot AB \\]
-   
+
 2. 再使用幂等定理：
    \\[ A \cdot AB = AB \\]
 
 因此，简化后的表达式为：
 \\[ Y = AB \\]
 
-### Example :
+### Example
+
 简化表达式：  
 \\[ Y = \overline{A}BC + \overline{A} \\]
 
@@ -578,7 +569,8 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 **SOP（Sum-of-Products）形式**是布尔表达式的一种标准化表示形式，其中每个乘积项仅包含文字（即变量或其补数）。在设计逻辑电路时，SOP 形式常被用来实现逻辑表达式，因为它们可以直接对应到逻辑门的实现。
 
-### Example :
+### Example
+
 简化表达式：  
 \\[ Y = (A + C + D + E)(A + B) \\]
 
@@ -586,7 +578,7 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 1. 分配 \\( (A + B) \\) 到每个项：
    \\[ Y = A(A + B) + C(A + B) + D(A + B) + E(A + B) \\]
-   
+
 2. 使用幂等定理 \\( A + A = A \\) 和分配律 \\( A \cdot A = A \\)：
    \\[ Y = A + AC + AD + AE + BC + BD + BE \\]
 
@@ -597,8 +589,6 @@ De Morgan 定理在逻辑电路设计中非常重要，尤其是在逻辑表达�
 
 - **变量顺序**：在蕴含项中，变量应按字母顺序排列。
 - **蕴含项顺序**：蕴含项的顺序无关紧要，不影响表达式的等价性。
-
-
 
 ## Review: Canonical SOP & POS Forms
 
@@ -619,8 +609,6 @@ POS 形式是将布尔表达式写为一组和项的积，每一项都是变量�
   \\[ E = (C + M)(C + \overline{M})(\overline{C} + \overline{M}) \\]
 
 SOP 和 POS 形式表达的是相同的逻辑功能，只是在实现逻辑电路时需要根据不同的需求选择适合的形式。
-
-
 
 ## Factoring: POS Form
 
@@ -650,8 +638,6 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 ![image-20241016140231523]({{ site.baseurl }}/docs/assets/image-20241016140231523.png)
 
 ![image-20241016140241128]({{ site.baseurl }}/docs/assets/image-20241016140241128.png)
-
-
 
 # Common Errors in Boolean Algebra: Simplifying Equations
 
@@ -736,15 +722,12 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 
 通过避免这些常见的错误，可以更准确地简化布尔表达式，提高逻辑设计的效率。
 
-
-
-
-
 # From Logic to Gates
 
 在将逻辑表达式转换为逻辑门电路时，我们需要理解每个逻辑操作符对应的基本逻辑门，并按表达式的结构连接这些逻辑门。以下是将布尔表达式转换为电路的过程。
 
-### Example: 
+### Example
+
 构建以下逻辑表达式的电路：  
 \\[ Y = A\overline{B} + \overline{C}DE \\]
 
@@ -782,8 +765,6 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 
 这些规则有助于确保电路图的可读性和逻辑正确性，避免理解上的误差。
 
-
-
 ## Two-Level Logic
 
 **两级逻辑**是指逻辑电路中常见的一种设计结构，它由两层逻辑门组成，通常是 **AND 门** 和 **OR 门** 的组合。该设计的特点是：
@@ -791,7 +772,8 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 - 第一层使用 AND 门进行乘积运算。
 - 第二层使用 OR 门对 AND 门的输出进行求和。
 
-### Example:
+### Example
+
 \\[ Y = \overline{A}\overline{B}C + A\overline{B}C + \overline{A}BC \\]
 
 该表达式包含三个 AND 项（\\(\overline{A}\overline{B}C\\)、\\(A\overline{B}C\\)、\\(\overline{A}BC\\)），然后通过 OR 门组合成最终输出 \\( Y \\)。这种形式的电路被称为两级逻辑，因为它由两层逻辑运算构成。
@@ -805,10 +787,12 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 - **多级逻辑**允许通过多层逻辑门来逐步处理输入信号，从而实现复杂的逻辑功能。  
 - 如图所示的电路中，多个 AND 门和 OR 门组合在一起，形成了一个多级逻辑电路。
 
-### 优点：
+### 优点
+
 - 多级逻辑的设计更灵活，适用于实现复杂的逻辑关系。
 
-### 缺点：
+### 缺点
+
 - 由于信号需要经过多层逻辑门，可能会增加延迟和功耗。
 
 ## Multiple-Output Circuits
@@ -816,20 +800,13 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 在某些情况下，一个电路可能有多个输出。例如，**优先电路（Priority Circuit）**是一个多输出电路的典型示例，它的输出基于输入的优先级顺序。
 
 ### Example: Priority Circuit
+
 - 当多个输入信号为 **真（1）** 时，电路输出中只会根据具有最高优先级的输入对应的输出为 **真**，其他输出为 **假（0）**。
 - 在真值表中，输入 \\( A_3 \\)、\\( A_2 \\)、\\( A_1 \\)、\\( A_0 \\) 具有优先级，输出 \\( Y_3 \\)、\\( Y_2 \\)、\\( Y_1 \\)、\\( Y_0 \\) 依次表示最优先的输入信号。
-
-
-
-
 
 ## ![image-20241016141025135]({{ site.baseurl }}/docs/assets/image-20241016141025135.png)
 
 硬件实现中，每个输出信号 \\( Y_n \\) 表示输入中具有最高优先级的那个信号。优先电路常用于需要根据优先级选择输入的场景，如中断请求处理器和调度器。
-
-
-
-
 
 ## Don’t Cares in Logic Design
 
@@ -837,14 +814,16 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 
 在优先电路的真值表中，有时某些输入组合不会出现在实际操作中，或对输出的影响无关紧要。在这种情况下，我们可以自由选择这些条件下的输出值，以便使用更少的逻辑门来实现功能。
 
-### 例子：
+### 例子
+
 在图表中的真值表中，某些行对应的输出是 "不关心" 的情况。通过在设计时充分利用这些 "不关心" 的输入组合，可以简化逻辑表达式，减少硬件复杂度。
 
 # Two-Level Logic Forms
 
 两级逻辑是最常见的组合逻辑形式，特别适合实现逻辑方程。两级逻辑的基本形式可以是 AND 后跟 OR（即 SOP 形式），或 OR 后跟 AND（即 POS 形式）。
 
-### Two-Level Logic Variations:
+### Two-Level Logic Variations
+
 - **SOP 形式**: AND 门先执行操作，结果由 OR 门组合。这是两级逻辑中最常见的形式。
   - 例子：\\( Y = A\overline{B}C + AB\overline{C} + A\overline{B}\overline{C} \\)
   
@@ -859,20 +838,18 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
 
 在两级逻辑中，也可以有变体，例如 ORs 后跟 ANDs。对于这些情况，我们使用 **POS 形式** 来表示。
 
-### Example:
+### Example
+
 \\[ Y = (\overline{A} + \overline{B})(A + B + \overline{C}) \\]
 
 在这个例子中，OR 操作先执行，然后再通过 AND 门组合输出。
-
-
-
-
 
 ## Two-Level Logic
 
 在数字电路设计中，**两级逻辑**结构通常涉及两层逻辑门操作。最常见的两级逻辑是 **SOP（Sum of Products）** 和 **POS（Product of Sums）** 形式，这些形式有助于简化复杂的逻辑表达式并优化电路设计。
 
 ### Example 1: ANDs followed by ORs (SOP Form)
+
 - **形式**: AND 门后接 OR 门（SOP 形式）。
 - **示例**:  
   \\[
@@ -883,6 +860,7 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
   - 这是一个 **SOP（乘积和）** 形式的两级逻辑，因为它从 AND 操作开始，最后通过 OR 门将结果求和。
 
 ### Example 2: ORs followed by ANDs (POS Form)
+
 - **形式**: OR 门后接 AND 门（POS 形式）。
 - **示例**:  
   \\[
@@ -925,8 +903,6 @@ De Morgan 定理帮助我们将布尔表达式中的乘积转换为和，或将�
   \\]
   - 将和（OR）取反等同于对每个项取反后进行乘积（AND）运算。
 
-
-
 <img src="{{ site.baseurl }}/docs/assets/image-20241016141452402.png" alt="image-20241016141452402" style="zoom:80%;" />
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016141516827.png" alt="image-20241016141516827" style="zoom:80%;" />
@@ -948,6 +924,7 @@ De Morgan 定理不仅适用于逻辑表达式的简化，也能在电路设计�
 ## Bubble Pushing
 
 ### 反向操作（Backward Transformation）
+
 在反向操作中，门体会发生变化，通常涉及对输入添加反向泡泡。通过这种方式，可以将 NAND 和 NOR 门转换为等效的逻辑形式。
 
 - 例如：在下图中，NAND 门转换成了一个 OR 门，且其输入端都加上了泡泡（反向符号），确保逻辑功能不变：
@@ -958,7 +935,8 @@ De Morgan 定理不仅适用于逻辑表达式的简化，也能在电路设计�
 A \cdot B \text{（NAND）} \rightarrow \overline{A} + \overline{B} \text{（OR)}
 \\]
 
-### 规则：
+### 规则
+
 - **从输出开始，逐步向输入推移**：首先确定最终的输出形式，然后根据反向符号的需求逐步向输入推进。
 - **在最终输出推送泡泡**：推送泡泡直到达到输入，使得最终输出形式与逻辑要求一致。
 - **绘制门时，使泡泡可以相互抵消**：通过适当的门和连接设计，消除多余的泡泡，简化电路。
@@ -970,8 +948,6 @@ A \cdot B \text{（NAND）} \rightarrow \overline{A} + \overline{B} \text{（OR)
 <img src="{{ site.baseurl }}/docs/assets/image-20241016142002046.png" alt="image-20241016142002046" style="zoom:70%;" />
 
 ![image-20241016142010531]({{ site.baseurl }}/docs/assets/image-20241016142010531.png)
-
-
 
 # X's and Z's in Combinational Logic
 
@@ -1024,8 +1000,6 @@ A \cdot B \text{（NAND）} \rightarrow \overline{A} + \overline{B} \text{（OR)
   - 当一个驱动器激活时，其它所有驱动器处于高阻状态（Z），从而不会干扰总线上的数据传输。
   - 三态总线常用于计算机系统中的共享资源，如处理器、存储器、以太网等设备，确保只有一个设备可以在某一时刻向总线写入数据。
 
-
-
 # Karnaugh Maps (K-Maps)
 
 ## 卡诺地图
@@ -1051,9 +1025,8 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
   3. 写出仅包含那些在圈中 **不同时存在** 正和反变量的文字的布尔表达式。
 
 例如：
+
 - 在 3 变量的真值表中，\\( Y = \overline{A}BC + A\overline{B}C + AB\overline{C} \\) 可以使用K-map进行简化。
-
-
 
 ## Definitions and K-Map Rules
 
@@ -1080,11 +1053,10 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 
 ![image-20241016150729244]({{ site.baseurl }}/docs/assets/image-20241016150729244.png)
 
-
-
 # Karnaugh Maps with Don’t Cares
 
-### K-Map Rules Recap:
+### K-Map Rules Recap
+
 1. **每个 1 必须至少圈一次**：任何在K-Map中的1必须被至少包括在一个圈内。
 2. **每个圈必须跨越 2 的幂次方**：每个圈内的格子数必须是 2、4、8 等 2 的幂次方。
 3. **圈必须尽量大**：圈应尽量包含更多的1，以简化表达式。
@@ -1102,6 +1074,7 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 # Combinational Building Blocks: Multiplexers
 
 ## Multiplexer (Mux)
+
 多路选择器（Mux）是一种常见的组合逻辑电路，它允许在多个输入之间进行选择并将选定的输入传递到输出。
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016151025561.png" alt="image-20241016151025561" style="zoom:67%;" />
@@ -1142,8 +1115,6 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 
 两种方法都有各自的优点，使用逻辑门更适合简单的组合电路，而三态缓冲器则在设计更复杂的电路中具有更好的灵活性。
 
-
-
 ## 4:1 Multiplexer Implementations
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016151302571.png" alt="image-20241016151302571" style="zoom:80%;" />
@@ -1168,6 +1139,7 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
    - 选择信号 \\( S_0 \\) 决定哪个 2:1 Mux 输出有效，\\( S_1 \\) 决定选择的是哪一对输入信号。
 
 ## Logic Using Multiplexers
+
 ### 使用 Mux 作为查找表（Lookup Table）
 
 多路选择器也可以用作查找表（LUT），存储和生成布尔逻辑。通过将输入信号和选择信号组合，可以将任意布尔函数表示为多路选择器的输出。
@@ -1190,6 +1162,7 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 # Combinational Building Blocks: Decoders
 
 ## Decoders
+
 解码器（Decoder）是一个重要的组合电路模块，用于将 \\( N \\) 个输入解码为 \\( 2^N \\) 个独特的输出信号，每次只有一个输出为高电平（One-hot 输出），其余输出为低电平。这使得解码器在选择器、多路复用器、地址解码等场合中非常实用。
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016151538187.png" alt="image-20241016151538187" style="zoom:80%;" />
@@ -1209,6 +1182,7 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
   |      1      |      1      |      1      |      0      |      0      |      0      |
 
 ## Decoder Implementation
+
 解码器的实现通常使用 AND 和 NOT 门。在2:4解码器中，输入信号 \\( A_1 \\) 和 \\( A_0 \\) 的不同组合通过 NOT 门和 AND 门的排列组合，选择相应的输出。
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016151555990.png" alt="image-20241016151555990" style="zoom:67%;" />
@@ -1219,6 +1193,7 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 这种实现方式确保每次只有一个输出为高电平。
 
 ## Logic Using Decoders
+
 解码器也可用于实现布尔逻辑。通过解码输入信号，并将输出信号通过 OR 门组合，可以实现逻辑函数。解码器输出可以直接与布尔函数的最小项（minterm）对应。
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016151952906.png" alt="image-20241016151952906" style="zoom:80%;" />
@@ -1228,10 +1203,6 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
   - 输入 \\( A \\) 和 \\( B \\) 通过解码器生成四个最小项，其中 \\( AB \\) 和 \\( \overline{A}·\overline{B} \\) 是感兴趣的项，将这两个输出通过 OR 门组合即可实现目标逻辑。
 
 这种方式使得解码器可以高效地作为布尔函数生成的模块，在数字电路设计中非常常见。
-
-
-
-
 
 # Timing
 
@@ -1244,10 +1215,13 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 如图所示，当输入信号 \\( A \\) 发生变化时，输出信号 \\( Y \\) 并不会立即变化，而是存在一个短暂的延迟，直到输出稳定下来。
 
 ## Propagation & Contamination Delay
+
 #### 传播延迟（Propagation Delay，\\( t_{pd} \\)）
+
 传播延迟是从输入信号发生变化到输出信号稳定的最长时间间隔。它是指输入信号变化后，输出完全稳定所需的最大延迟。
 
 #### 污染延迟（Contamination Delay，\\( t_{cd} \\)）
+
 污染延迟是从输入信号变化到输出信号最早可能发生变化的最短时间间隔。也就是说，输出信号开始响应输入变化的最小时间。
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016152323280.png" alt="image-20241016152323280" style="zoom:67%;" />
@@ -1255,18 +1229,16 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 通过图示可以直观地看到，输入信号 \\( A \\) 改变后，输出信号 \\( Y \\) 并不会立即达到稳定状态，而是在污染延迟时间 \\( t_{cd} \\) 之后开始波动，并最终在传播延迟 \\( t_{pd} \\) 结束时达到稳定状态。
 
 ## Propagation & Contamination Delay的原因
+
 延迟的产生原因包括电路中的电容、电阻，以及光速限制等物理因素。
 
 传播延迟 \\( t_{pd} \\) 和污染延迟 \\( t_{cd} \\) 可能不同的原因有以下几点：
+
 - **上升和下降延迟不同**：电路中高电平（1）到低电平（0）的转换时间，和低电平（0）到高电平（1）的转换时间可能不对称。
 - **多输入和多输出**：有些输入和输出信号可能比其他信号传播得更快。
 - **温度影响**：电路在高温环境下通常速度较慢，而在低温下则运行较快。
 
 了解这些延迟特性对于优化电路设计、提高运行速度和稳定性至关重要。
-
-
-
-
 
 ## Critical (Long) & Short Paths
 
@@ -1295,8 +1267,6 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 
 如图所示，电路中的关键路径 \\( n1 \\) 经过两个逻辑门（AND 和 OR），而短路径 \\( n2 \\) 只经过一个逻辑门（OR）。在 \\( B \\) 信号变化时，短路径先更新，而关键路径由于延迟较长，导致输出 \\( Y \\) 在信号稳定之前产生了短暂的毛刺。
 
-
-
 ## Fixing the Glitch
 
 <img src="{{ site.baseurl }}/docs/assets/image-20241016153855295.png" alt="image-20241016153855295" style="zoom:80%;" />
@@ -1308,4 +1278,3 @@ Karnaugh图（K-Maps）是一种简化布尔表达式的图形工具，通过合
 理解毛刺现象非常重要，尤其是在同步设计中。由于同步设计会使用时钟信号，因此很多情况下毛刺不会引发严重问题。然而，在某些情况下，识别并修复毛刺是至关重要的，特别是在仿真或示波器检测中。
 
 需要注意的是，**不能完全消除所有毛刺**。当多个输入同时发生变化时，即使经过优化的设计仍然可能产生毛刺，因此需要根据具体的电路应用场景进行合理的优化与处理。
-

@@ -19,18 +19,20 @@
 # in the templates via {{ site.myvariable }}.
 
 title: "Lzzs DDCA Notebook"
-email: lizizhi122@gmail.com
+email: lzzs122@foxmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- Lzzs DDCA Notebook
+ 《Digital Design and Computer Architecture: RISC-V Edition》是一部深入探讨数字设计与计算机架构的经典教材，覆盖了从基础概念到硬件描述语言以及关键数字构建模块的广泛内容。本书针对RISC-V架构，通过详细的理论与实践相结合，为读者提供扎实的计算机设计与数字电路知识。内容适合工程师、学生及所有对数字系统设计感兴趣的学习者。 - Lzzs DDCA Notebook
 baseurl: "/DDCA" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://lzzs.fun" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  LzzsG
+lang: zh-CN
 
 # Build settings
 theme: just-the-docs
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -92,8 +94,8 @@ search:
 aux_links:
   "Home":
     - "//lzzs.fun"
-  "Blog":
-  - "//lzzs.fun/blog"
+  "Notes":
+  - "//lzzs.fun/notebooks"
   "GitHub":
   - "//github.com/lzzsG/DDCA"
 

@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Chapter 4v Verilog Edition
-permalink: /ch4/Verilog
+permalink: /ch4-hardware-description-languages/Verilog
 nav_order: 1
 parent: Chapter 4 Hardware Description Languages
-
+description: Chapter 4 v Hardware Description Languages (HDL) 硬件描述语言（HDL）是数字系统设计的关键工具。本章深入介绍HDL的基础知识与实际应用，通过高层次代码定义硬件电路功能，并利用仿真工具验证设计的正确性。本章为读者理解复杂硬件系统设计提供了全面支持。verilog版
 ---
 
 
@@ -20,6 +20,7 @@ Verilog 是一种用于数字设计和仿真的硬件描述语言（HDL），而
 - **`output`**：定义模块的输出端口，表示该模块产生的信号。
 
 **示例**：
+
 ```verilog
 module example(input a, b, output y);
   assign y = a & b;  // 逻辑与操作
@@ -35,10 +36,12 @@ endmodule
 - **`reg`**：用于存储逻辑信号，可以在触发事件（如时钟信号）时保持其值。需要注意的是，尽管名字叫 "reg"，它并不一定映射到硬件中的寄存器，具体取决于实际使用场景。
 
 **使用场景**：
+
 - **`wire`**：用于组合逻辑电路，例如门电路的连接。
 - **`reg`**：用于时序逻辑电路，通常在 `always` 块中使用，用于存储时钟驱动的信号。
 
 **示例**：
+
 ```verilog
 module example(input a, b, output reg y); // 输出为寄存器类型
   always @ (posedge clk) begin
@@ -62,6 +65,7 @@ endmodule
 **示例**：
 
 - **组合逻辑**：
+
   ```verilog
   always @(*) begin
     y = a & b;  // 当输入 a 或 b 变化时，重新计算 y
@@ -69,6 +73,7 @@ endmodule
   ```
 
 - **时序逻辑**：
+
   ```verilog
   always @(posedge clk) begin
     y <= a & b;  // 在时钟上升沿时更新 y
@@ -81,6 +86,7 @@ endmodule
    - `assign` 用于定义组合逻辑的输出。在组合逻辑电路中，`assign` 将输入信号立即分配给输出信号。
 
    **示例**：
+
    ```verilog
    assign y = a & b;
    ```
@@ -89,6 +95,7 @@ endmodule
    - `case` 语句用于多路选择。Verilog 中需要明确列出所有可能的输入组合，或者使用 `default` 来处理其他未列出的情况，以避免综合器推断锁存器。
 
    **示例**：
+
    ```verilog
    always @(*) begin
      case (sel)
@@ -103,6 +110,7 @@ endmodule
    - 如果输出是时钟驱动的信号（即需要在时钟沿更新），应该使用 `reg` 类型，并且必须在 `always` 块中更新。
 
    **示例**：
+
    ```verilog
    module dff(input clk, d, output reg q);
      always @(posedge clk)
@@ -116,13 +124,13 @@ endmodule
    在 SystemVerilog 中，`logic` 可以替代 `wire` 和 `reg`，减少了开发者对信号类型的混淆。`logic` 可以在组合逻辑和时序逻辑中使用。
 
    **示例**：
-   
+
    ```verilog
    module example(input logic a, b, output logic y);
      always @(*) y = a & b;
    endmodule
    ```
-   
+
 2. **`always_ff` 和 `always_comb`**：
    SystemVerilog 提供了更为专门化的 `always_ff` 和 `always_comb` 块，用来分别表示时序逻辑和组合逻辑。这使得代码更具可读性和安全性，防止了无意中混合时序和组合逻辑。
 
@@ -130,6 +138,7 @@ endmodule
    - **`always_comb`**：用于描述组合逻辑，自动推断所有输入信号。
 
    **示例**：
+
    ```verilog
    always_ff @(posedge clk) begin
      q <= d;
@@ -146,6 +155,7 @@ endmodule
    SystemVerilog 引入了强类型定义功能，如 `enum`、`typedef`，使得代码更加清晰，并且便于调试和验证。例如，状态机可以使用 `enum` 定义状态类型。
 
    **示例**：
+
    ```verilog
    typedef enum logic [1:0] {S0, S1, S2} state_t;
    state_t state;
@@ -155,6 +165,7 @@ endmodule
    SystemVerilog 引入了 `interface`，用于模块之间信号的分组和管理。通过接口，多个信号可以通过一个接口变量传递，简化了模块端口的连接。
 
    **示例**：
+
    ```verilog
    interface bus();
      logic [31:0] data;
@@ -166,6 +177,7 @@ endmodule
    SystemVerilog 增强了验证能力，增加了断言（assertions）功能，允许用户在代码中直接检查设计的正确性。这些断言可以用来检测时序或逻辑条件，方便调试。
 
    **示例**：
+
    ```verilog
    assert property (posedge clk |-> (q == d));
    ```
@@ -179,9 +191,9 @@ endmodule
 
 ---
 
-## 以下是本节(ch4)相关内容的Verilog版本：
+## 以下是本节(ch4)相关内容的Verilog版本
 
-###  Verilog 行为级别描述（Behavioral Verilog）
+### Verilog 行为级别描述（Behavioral Verilog）
 
 ```verilog
 module example(input a, b, c, 
@@ -194,8 +206,6 @@ endmodule
 这个 Verilog 模块有三个输入 `a`、`b` 和 `c`，一个输出 `y`。通过逻辑表达式计算输出 `y`。主要逻辑操作符包括按位与（`&`）、按位或（`|`）、按位取反（`~`），生成一个复杂的组合逻辑表达式：
 
 - 当 `a` 为 0 且 `b`、`c` 均为 0，或当 `a` 为 1 且 `b` 为 0 且 `c` 为 0，或当 `a` 为 1 且 `b` 为 0 且 `c` 为 1 时，输出 `y` 为 1。
-
-
 
 ### Verilog 语法规则
 
@@ -256,10 +266,6 @@ endmodule
 
 - `&a` 是对 `a` 信号的所有位进行按位与的简写形式，结果是一个单一位输出。
 
-
-
-
-
 ### Conditional Assignment
 
 Verilog中的条件赋值（**三元运算符**）基于一个条件信号 `s` 来选择两个输入信号 `d0` 和 `d1` 之一作为输出 `y`。代码如下：
@@ -316,10 +322,6 @@ endmodule
 ```
 
 - 通过将 `mux2` 分成两部分，分别处理高 4 位和低 4 位，从而实现 8 位数据的多路选择。
-
-
-
-
 
 ### Z: Floating Output
 
@@ -443,8 +445,6 @@ endmodule
 
 - **注意**：锁存器不是课程推荐使用的电路结构，因为它会产生不期望的时序问题。如果在合成硬件时包含了锁存器，通常被认为是设计错误。
 
-
-
 ### Other Behavioral Statements
 
 在 Verilog 中，`if/else` 和 `case`（以及其扩展形式 `casez`）等语句必须放置在 `always` 语句块中使用。此外，所有在 `always` 语句中分配的变量都必须声明为 `reg` 类型，即使这些变量并未实际被注册。
@@ -498,15 +498,11 @@ endmodule
 - 该代码根据 `data` 输入值设置 `segments` 的输出状态，以显示不同的数字。
 - `default` 语句确保所有可能的输入组合都被涵盖，这是使用 `case` 语句时的一个重要规范。
 
-
-
-
-
 ### FSM in Verilog
 
 该模块实现了一个简单的有限状态机（FSM），用来执行三分频操作。通过状态机将输入信号按特定模式转换为输出 `q`。
 
-### Verilog代码解析：
+### Verilog代码解析
 
 ```verilog
 module divideby3FSM (input clk,
@@ -548,7 +544,7 @@ endmodule
 
 参数化模块允许我们根据不同需求调整模块的宽度或特定行为。
 
-### 2:1 MUX 参数化实现：
+### 2:1 MUX 参数化实现
 
 ```verilog
 module mux2 #(parameter width = 8) // 默认宽度为 8 位
@@ -561,7 +557,7 @@ module mux2 #(parameter width = 8) // 默认宽度为 8 位
 endmodule
 ```
 
-#### 模块实例化：
+#### 模块实例化
 
 - 使用默认 8 位宽度：
 
@@ -577,15 +573,11 @@ endmodule
 
 这个设计展示了 Verilog 模块的参数化特性，允许同一个模块在不同实例中具有不同的输入和输出位宽，从而极大地提升了模块的可复用性和灵活性。
 
-
-
-
-
 ### Simple Testbench
 
 该模块实现了一个简单的测试平台（testbench），用于验证被测试设备（DUT）的行为。在这个例子中，测试平台通过设置输入信号 `a`, `b`, `c`，并观察输出信号 `y` 来检测被测试设备的功能是否符合预期。
 
-### Verilog代码解析：
+### Verilog代码解析
 
 ```verilog
 module testbench1();
@@ -617,7 +609,7 @@ endmodule
 
 这个自检测试平台不仅应用了输入信号，还检查输出信号是否符合预期。使用 `if` 语句在每次输入后检查输出，如果输出不正确，则通过 `display` 语句输出错误信息。
 
-### Verilog代码解析：
+### Verilog代码解析
 
 ```verilog
 module testbench2();
@@ -659,15 +651,13 @@ endmodule
 - **输出检查**：每次更改输入后，程序使用 `if` 语句检查输出是否符合预期。若不符合预期，输出相应的错误信息，例如 "000 failed."。
 - **自检机制**：通过自检机制，测试平台可以自动检测到输出错误，减少手动验证的工作量。这对于复杂设计的调试特别有用。
 
-
-
 下面使用 Verilog 实现一个**自动化测试平台（Testbench）**，该平台使用外部文件中的测试向量来验证电路设计的正确性。
 
 ### 1. 生成时钟信号
 
 测试平台首先生成一个时钟信号，用于驱动电路的同步操作。
 
-### Verilog代码：
+### Verilog代码
 
 ```verilog
 module testbench3();
@@ -696,7 +686,7 @@ endmodule
 
 在时钟信号生成后，测试平台需要从外部文件中读取测试向量文件 `example.tv`，并将其加载到数组 `testvectors` 中。
 
-### Verilog代码：
+### Verilog代码
 
 ```verilog
 initial
@@ -714,7 +704,7 @@ initial
 
 在每个时钟上升沿，将当前测试向量中的输入信号 `a`, `b`, `c` 和期望的输出 `yexpected` 分配给 DUT 的输入和输出。
 
-### Verilog代码：
+### Verilog代码
 
 ```verilog
 always @(posedge clk)
@@ -730,7 +720,7 @@ always @(posedge clk)
 
 在每个时钟的下降沿，测试平台比较 DUT 的实际输出 `y` 和期望输出 `yexpected`，并输出错误信息（如果有）。然后，读取下一个测试向量并重复这个过程。
 
-### Verilog代码：
+### Verilog代码
 
 ```verilog
 always @(negedge clk)
@@ -755,6 +745,3 @@ always @(negedge clk)
 - **$display**：打印错误信息，显示出错的输入组合和期望输出。
 
 这个测试平台通过时钟信号驱动，被动地读取存储在文件中的测试向量，并自动将其应用于 DUT。每当输出与期望不符时，平台会记录并报告错误，最终在所有测试完成后给出测试结果总结。这种方法极大地提高了测试效率和自动化程度，适合用于大规模的电路验证。
-
-
-

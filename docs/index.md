@@ -2,7 +2,7 @@
 layout: post
 title: DDCA
 nav_order: 0
-description: "DDCA"
+description: "DDCA 《Digital Design and Computer Architecture: RISC-V Edition》是一部深入探讨数字设计与计算机架构的经典教材，覆盖了从基础概念到硬件描述语言以及关键数字构建模块的广泛内容。本书针对RISC-V架构，通过详细的理论与实践相结合，为读者提供扎实的计算机设计与数字电路知识。内容适合工程师、学生及所有对数字系统设计感兴趣的学习者。 - Lzzs DDCA Notebook"
 permalink: /
 ---
 
